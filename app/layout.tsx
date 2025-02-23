@@ -5,11 +5,11 @@ import "./globals.css";
 import { ThemeProvider } from "next-themes";
 import Footer from "@/components/footer";
 import Nav from "@/components/nav";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
 import ogImage from "./opengraph-image.png";
 
 export const metadata: Metadata = {
-  title: "Philipp Parzer",
+  title: "Yathish G P",
   description: "design engineering, and comms",
   metadataBase: new URL(`https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`),
   openGraph: {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
       {
         url: ogImage.src,
         width: ogImage.width,
-        height: ogImage.height
+        height: ogImage.height,
       },
     ],
   },
@@ -28,14 +28,13 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${GeistSans.variable} ${GeistMono.variable} relative font-sans bg-whiteout selection:text-white 24576e23-44f4-4174-a049-9a0ebd609e65 selection:bg-pink-400 dark:bg-zinc-900 text-blackout dark:text-zinc-100`}
       >
         <ThemeProvider attribute="class">
-          <Nav/>
+          <Nav />
           {children}
           <Footer />
         </ThemeProvider>
