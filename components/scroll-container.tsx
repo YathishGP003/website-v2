@@ -23,8 +23,8 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
         <div className="sticky z-20 top-[33vh] left-0 pl-4 md:pl-0 translate-x-0 lg:translate-x-[100px] md:translate-x-[130px] max-w-[792px] w-full flex justify-center">
           <div className="flex gap-1.5 md:gap-4 relative md:-translate-x-[230px] w-full text-[22px] md:text-[32px] font-semibold items-baseline left-0 ">
             <div className="flex md:gap-4 gap-1.5 items-baseline">
-              Philipp{" "}
-              <span className="opacity-50 text-lg md:text-[22px]">is</span>{" "}
+            𝚈𝚊𝚝𝚑𝚒𝚜𝚑{" "}
+              <span className="opacity-50 text-lg md:text-[22px]">𝚒𝚜</span>{" "}
             </div>
             <div className="relative leading-normal h-[22px] md:h-[33px]">
               <div>
@@ -152,11 +152,11 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
                   I&lsquo;m the co-founder of{" "}
                   <span className="dark:text-zinc-100 text-blackout whitespace-nowrap">
                     <Link
-                      href="https://adlerlagune.com"
+                      href="https://www.linkedin.com/company/calypsostartup"
                       target="_blank"
                       className="underline inline-flex dark:text-whiteout/100 gap-1 items-center font-semibold text-blackout/100"
                     >
-                      adlerlagune
+                      Calypso
                       <ExternalLink strokeWidth={3} width={20} />
                     </Link>
                   </span>{" "}
