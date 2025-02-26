@@ -1,8 +1,9 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ContentBox from "./content-box";
+import { useDebounce } from "@uidotdev/usehooks";
 import Link from "next/link";
 import useFaviconAnimation from "@/lib/use-favicon-animation";
 import { ExternalLink } from "lucide-react";
@@ -14,6 +15,7 @@ const WORDS = ["aware", "cutting-edge", "proficient", "daring"];
 const ScrollContainer = ({}: ScrollContainerProps) => {
   useFaviconAnimation();
   const [activeContentBoxIndex, setActiveContentBoxIndex] = useState(0);
+  const debouncedActiveContentIndex = useDebounce(activeContentBoxIndex, 300);
 
   return (
     <div className="relative w-full md:mb-[200px] max-w-screen flex flex-col items-center">
@@ -21,8 +23,8 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
         <div className="sticky z-20 top-[33vh] left-0 pl-4 md:pl-0 translate-x-0 lg:translate-x-[100px] md:translate-x-[130px] max-w-[792px] w-full flex justify-center">
           <div className="flex gap-1.5 md:gap-4 relative md:-translate-x-[230px] w-full text-[22px] md:text-[32px] font-semibold items-baseline left-0 ">
             <div className="flex md:gap-4 gap-1.5 items-baseline">
-            𝚈𝚊𝚝𝚑𝚒𝚜𝚑{" "}
-              <span className="opacity-50 text-lg md:text-[22px]">𝚒𝚜</span>{" "}
+              Philipp{" "}
+              <span className="opacity-50 text-lg md:text-[22px]">is</span>{" "}
             </div>
             <div className="relative leading-normal h-[22px] md:h-[33px]">
               <div>
@@ -30,10 +32,10 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
                   <div>
                     <AnimatePresence initial={false}>
                       {WORDS.map((word, i) => {
-                        if (i === activeContentBoxIndex)
+                        if (i === debouncedActiveContentIndex)
                           return (
                             <motion.div
-                              className="absolute left-0 top-0 rounded-lg"
+                              className="absolute left-0 top-0  rounded-lg"
                               key={word + i}
                               initial={{
                                 x: -20,
@@ -86,7 +88,7 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
             <ul>
               <ContentBox
                 setActiveIndex={setActiveContentBoxIndex}
-                activeIndex={activeContentBoxIndex}
+                activeIndex={debouncedActiveContentIndex}
                 index={0}
                 riveSource="/rive/aware.riv"
                 riveStateMachine="1"
@@ -105,7 +107,7 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
               </ContentBox>
               <ContentBox
                 setActiveIndex={setActiveContentBoxIndex}
-                activeIndex={activeContentBoxIndex}
+                activeIndex={debouncedActiveContentIndex}
                 index={1}
                 riveSource="/rive/cutting-edge.riv"
                 riveStateMachine="2"
@@ -121,7 +123,7 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
               </ContentBox>
               <ContentBox
                 setActiveIndex={setActiveContentBoxIndex}
-                activeIndex={activeContentBoxIndex}
+                activeIndex={debouncedActiveContentIndex}
                 index={2}
                 riveSource="/rive/proficient.riv"
                 riveStateMachine="3"
@@ -140,7 +142,7 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
               </ContentBox>
               <ContentBox
                 setActiveIndex={setActiveContentBoxIndex}
-                activeIndex={activeContentBoxIndex}
+                activeIndex={debouncedActiveContentIndex}
                 index={3}
                 riveSource="/rive/daring.riv"
                 riveStateMachine="4"
@@ -150,11 +152,11 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
                   I&lsquo;m the co-founder of{" "}
                   <span className="dark:text-zinc-100 text-blackout whitespace-nowrap">
                     <Link
-                      href="https://www.linkedin.com/company/calypsostartup"
+                      href="https://adlerlagune.com"
                       target="_blank"
                       className="underline inline-flex dark:text-whiteout/100 gap-1 items-center font-semibold text-blackout/100"
                     >
-                      Calypso
+                      adlerlagune
                       <ExternalLink strokeWidth={3} width={20} />
                     </Link>
                   </span>{" "}
