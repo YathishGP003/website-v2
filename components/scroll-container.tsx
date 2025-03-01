@@ -90,8 +90,7 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
                 setActiveIndex={setActiveContentBoxIndex}
                 activeIndex={debouncedActiveContentIndex}
                 index={0}
-                artboard="AWARE"
-                riveSource="/rive/main.riv"
+                riveSource="/rive/aware.riv"
                 riveStateMachine="1"
                 keywords={["leading teams", "comms", "consulting"]}
               >
@@ -110,8 +109,7 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
                 setActiveIndex={setActiveContentBoxIndex}
                 activeIndex={debouncedActiveContentIndex}
                 index={1}
-                artboard="CUTTING EDGE"
-                riveSource="/rive/main.riv"
+                riveSource="/rive/cutting-edge.riv"
                 riveStateMachine="2"
                 keywords={["rewrite", "rebrand", "improve"]}
               >
@@ -127,8 +125,7 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
                 setActiveIndex={setActiveContentBoxIndex}
                 activeIndex={debouncedActiveContentIndex}
                 index={2}
-                artboard="PROFICIENT"
-                riveSource="/rive/main.riv"
+                riveSource="/rive/proficient.riv"
                 riveStateMachine="3"
                 keywords={["engineering", "design"]}
               >
@@ -147,8 +144,7 @@ const ScrollContainer = ({}: ScrollContainerProps) => {
                 setActiveIndex={setActiveContentBoxIndex}
                 activeIndex={debouncedActiveContentIndex}
                 index={3}
-                artboard="DARING"
-                riveSource="/rive/main.riv"
+                riveSource="/rive/daring.riv"
                 riveStateMachine="4"
                 keywords={["entrepreneur", "agency"]}
               >
